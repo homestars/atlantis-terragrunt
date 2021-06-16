@@ -1,0 +1,15 @@
+---
+version: '3.9'
+
+services:
+  atlantis:
+    build: .
+    image: homestars/atlantis:latest
+    ports:
+      - "4141:4141"
+    command: server --log-level=debug
+    environment:
+      - ATLANTIS_GH_USER='FILL ME IN'
+      - ATLANTIS_GH_TOKEN='FILL ME IN'
+      - ATLANTIS_REPO_ALLOWLIST='FILL ME IN'
+      - ATLANTIS_REPO_CONFIG=/home/atlantis/server-atlantis.yaml
