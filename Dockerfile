@@ -19,7 +19,7 @@ RUN git clone --depth 1 --branch v2.2.2 https://github.com/tfutils/tfenv.git .tf
 RUN git clone --depth 1 --branch v0.0.3 https://github.com/cunymatthieu/tgenv.git .tgenv
 ENV PATH="/home/atlantis/.tfenv/bin:${PATH}"
 ENV PATH="/home/atlantis/.tgenv/bin:${PATH}"
-RUN tfenv install latest:^1.* && tfenv use latest:^1.*
+RUN tfenv install "latest:^1\.\d*\.\d*$" && tfenv use "latest:^1\.\d*\.\d*$"
 RUN tgenv install latest:^0.30.*
 
 #Add Github keys
