@@ -13,3 +13,4 @@ workflows:
     apply:
       steps:
       - run: tfenv install && tgenv install && terragrunt apply -no-color $PLANFILE
+log-level: "debug"
