@@ -8,6 +8,8 @@ then
     resource_id="$(echo $line | cut -d':' -f 2)"
     if [[ -z $(terragrunt state list $resource_name) ]];  then
       terragrunt import $resource_name $resource_id
+    else
+      echo "Skip importing as state already exists"
     fi
   done < resources.yaml
 else
