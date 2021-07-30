@@ -30,4 +30,7 @@ COPY --chown=atlantis:atlantis ./credentials.sh credentials.sh
 RUN chmod +x /home/atlantis/credentials.sh && git config --global credential.helper "/home/atlantis/credentials.sh"
 RUN git config --global url.https://.insteadOf ssh://git@
 
+COPY --chown=atlantis:atlantis ./import_resources.sh /home/atlantis/import_resources.sh
+RUN chmod +x /home/atlantis/import_resources.sh
+
 COPY --chown=atlantis:atlantis ./server-atlantis.yaml /home/atlantis/server-atlantis.yaml
