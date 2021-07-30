@@ -9,7 +9,7 @@ workflows:
   terragrunt:
     plan:
       steps:
-        - run: tfenv install && tgenv install && terragrunt init
+        - run: tfenv install && tgenv install
         - run: /home/atlantis/import_resources.sh && terragrunt plan -no-color -out $PLANFILE
     apply:
       steps:
