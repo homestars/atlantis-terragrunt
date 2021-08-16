@@ -12,6 +12,7 @@ then
       echo "Skip importing $resource_name as the state already exists"
     else
       terragrunt import $resource_name $resource_id
+      echo "$resource_name is imported"
     fi
   done < resources.yaml
 else
