@@ -20,7 +20,7 @@ RUN git clone --depth 1 --branch v0.0.3 https://github.com/cunymatthieu/tgenv.gi
 ENV PATH="/home/atlantis/.tfenv/bin:${PATH}"
 ENV PATH="/home/atlantis/.tgenv/bin:${PATH}"
 RUN tfenv install "latest:^1\.\d*\.\d*$" && tfenv use "latest:^1\.\d*\.\d*$"
-RUN tgenv install latest:^0.30.*
+RUN tgenv install latest
 
 #Add Github keys
 RUN mkdir -p -m 0700 ~/.ssh && ssh-keyscan github.com >> ~/.ssh/known_hosts
